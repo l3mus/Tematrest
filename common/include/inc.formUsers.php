@@ -80,19 +80,19 @@ $rows.='	<div class="row">
 			         </div>';
             if($_SESSION[$_SESSION["CFGURL"]]["ssuser_nivel"] =='1'){ //this is modified version Dec 1 2015
                   header("Location:login.php");
-                  $rows.='<div class="form-group">
+                  /*$rows.='<div class="form-group">
                           <input type="checkbox" name="isAdmin" id="isAdmin" value="1" '.arrayReplace(array("1","2"),array("checked",""),$dato_user["nivel"]).'/>
                           <div class="col-sm-4">
                           <label for="isAdmin">'.ucfirst(LABEL_esSuperUsuario).'</label>
                             </div>
-                          </div>'; 
+                          </div>'; */
                  //Add custom levels
                     $rows.='<div class="form-group"> 
                               <div class="col-sm-4">
-                              <label for="isAdmin">'.ucfirst(LABEL_nivel).'</label> </br>
-                                <input type="radio" name="nivel" value="1" '. (($dato_user['nivel']==1)? 'checked':"") . '> Administrator</br>
-                                <input type="radio" name="nivel" value="2" '. (($dato_user['nivel']==2)? 'checked':"") . '> Metadata Manager</br>
-                                <input type="radio" name="nivel" value="3" '. (($dato_user['nivel']==3)? 'checked':""). '> Metadata Creator</br>
+                              <label for="nivel">'.ucfirst(LABEL_nivel).'</label> </br>
+                                <input type="radio" name="nivel" id="nivel" value="1" '. (($dato_user['nivel']==1)? 'checked':"") . '> Administrator</br>
+                                <input type="radio" name="nivel" id="nivel" value="2" '. (($dato_user['nivel']==2)? 'checked':"") . '> Metadata Manager</br>
+                                <input type="radio" name="nivel" id="nivel" value="3" '. (($dato_user['nivel']==3)? 'checked':""). '> Metadata Creator</br>
                               </div>
                             </div>';
                         

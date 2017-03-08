@@ -461,6 +461,7 @@ $arrayDatos=array("nombres"=> doValue($array,FORM_LABEL_nombre),
 		"pass"=> doValue($array,FORM_LABEL_pass),
 		"orga"=> doValue($array,FORM_LABEL_orga),
 		"isAdmin"=> doValue($array,"isAdmin"),
+		"nivel"=> doValue($array,"nivel"),
 		"isAlive"=> doValue($array,"isAlive"),
 		"id"=>doValue($array,FORM_LABEL_idUser)
 		);
@@ -1062,17 +1063,21 @@ function admin_users($do,$user_id=""){
 		$POSTarrayUser=doArrayDatosUser($_POST);
 
 		//Normalice admin
-		$nivel=($POSTarrayUser["isAdmin"]=='1') ? '1' : '2';
+		//$nivel=($POSTarrayUser["isAdmin"]=='1') ? '1' : '2';
 
 
-		//Check have one admin user
-		if (
+    //Add custom management levels 
+		$nivel=$POSTarrayUser[nivel];
+    
+		//Check have one admin user 
+    //FIX: can have multiple admins
+	/*	if (
 			($arrayUserData["nivel"]=='1') &&
 			($arrayCheckAdmin["cant"]=='1')
 			)
 		{
 			$nivel='1';
-		}
+		}*/ 
 
 
 		$POSTarrayUser[apellido]=trim($POSTarrayUser[apellido]);
@@ -1151,8 +1156,11 @@ function admin_users($do,$user_id=""){
 		case 'alta':
 		$POSTarrayUser=doArrayDatosUser($_POST);
 
-		$nivel=($POSTarrayUser[isAdmin]=='1') ? '1' : '2';
+		//$nivel=($POSTarrayUser[isAdmin]=='1') ? '1' : '2';
 
+    //Add custom management levels 
+		$nivel=$POSTarrayUser[nivel];
+    
 		$POSTarrayUser["apellido"]=trim($POSTarrayUser[apellido]);
 		$POSTarrayUser["nombres"]=trim($POSTarrayUser[nombres]);
 		$POSTarrayUser["mail"]=trim($POSTarrayUser[mail]);
