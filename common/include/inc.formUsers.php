@@ -96,19 +96,19 @@ $rows.='	<div class="row">
                               </div>
                             </div>';
                         
+              if(isset($dato_user["id"]))
+              {
+
+                $isAlive=($dato_user["estado"]=='ACTIVO') ? 'checked': '';
+                $rows.='<div class="form-group">
+                        <input type="checkbox" name="isAlive" id="isAlive" value="ACTIVO" '.$isAlive.'/>
+                        <div class="col-sm-4">
+                        <label for="isAlive">'.ucfirst(LABEL_User_Habilitado).'</label>
+                          </div>
+                        </div>';
+
+              };
             }
-            if(isset($dato_user["id"]))
-            {
-
-							$isAlive=($dato_user["estado"]=='ACTIVO') ? 'checked': '';
-							$rows.='<div class="form-group">
-											<input type="checkbox" name="isAlive" id="isAlive" value="ACTIVO" '.$isAlive.'/>
-											<div class="col-sm-4">
-											<label for="isAlive">'.ucfirst(LABEL_User_Habilitado).'</label>
-												</div>
-											</div>';
-
-						};
 											$rows.='<div class="form-group">
 																	<div class="col-sm-12 text-right">
 																	<input type="submit" class="btn btn-primary" id="boton" name="boton" value="'.ucfirst(LABEL_Guardar).'"/>

@@ -202,9 +202,13 @@ function HTMLformEditTerms($taskterm,$ARRAYtermino="0")
 			//тук се намира checkbox-a на формичката за въвеждане на new term - Checkbox-a прави terma-a candidate term
 			//checkbox for Candidate Terms
 			$hidden.='<div><input checked type="checkbox" name="estado_id" id="estado_id" value="12" alt="'.ucfirst(LABEL_Candidato).'" /> <label for="estado_id" accesskey="e">'.ucfirst(LABEL_Candidato).'</label></div>';
-			$hidden.='<div><input type="checkbox" name="isMetaTerm" id="isMetaTerm" value="1" alt="'.ucfirst(LABEL_meta_term).'" /> <label for="isMetaTerm" accesskey="e">'.ucfirst(LABEL_meta_term).'</label>
-			<div class="alert alert-info" role="alert">'.NOTE_isMetaTermNote.'</div>
-			</div>';
+      
+      if($_SESSION[$_SESSION["CFGURL"]][ssuser_nivel]=='1'){
+        $hidden.='<div><input type="checkbox" name="isMetaTerm" id="isMetaTerm" value="1" alt="'.ucfirst(LABEL_meta_term).'" /> <label for="isMetaTerm" accesskey="e">'.ucfirst(LABEL_meta_term).'</label>
+          <div class="alert alert-info" role="alert">'.NOTE_isMetaTermNote.'</div>
+        </div>';  
+      }
+    
 		}
 
 

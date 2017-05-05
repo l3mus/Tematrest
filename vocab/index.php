@@ -31,9 +31,9 @@ $search_string = (doValue($_GET,FORM_LABEL_buscar)) ? XSSprevent(doValue($_GET,F
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="<?php echo T3_WEBPATH;?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
    <link href="<?php echo T3_WEBPATH;?>bootstrap/submenu/css/bootstrap-submenu.min.css" rel="stylesheet">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet" />
+	 <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet" />
 	 <link href="<?php echo T3_WEBPATH;?>css/t3style.css" rel="stylesheet">
-      <link href="../plugins/css/userMenu.css" rel="stylesheet" media="all"/>
+   <link href="../plugins/css/userMenu.css" rel="stylesheet" media="all"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
